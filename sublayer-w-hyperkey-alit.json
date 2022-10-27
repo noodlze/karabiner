@@ -1,0 +1,307 @@
+{
+    "title": "Sublayer \"w\"-activate using alt",
+    "rules": [
+        {
+            "description": "Sublayer \"w\"-activate using alt",
+            "manipulators": [
+                {
+                    "description": "Toggle on/off window layer",
+                    "type": "basic",
+                    "from": {
+                        "key_code": "right_option"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_option"
+                        }
+                    ],
+                    "parameters": {
+                        "basic.to_if_held_down_threshold_milliseconds": 300
+                    },
+                    "to_if_held_down": [
+                        {
+                            "set_variable": {
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "set_notification_message": {
+                                "id": "window_layer_on",
+                                "text": "WINDOW LAYER enabled"
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "is_window_layer_on",
+                                "value": 0
+                            }
+                        },
+                        {
+                            "set_notification_message": {
+                                "id": "window_layer_on",
+                                "text": ""
+                            }
+                        }
+                    ]
+                },
+                {
+                        "description": "Window: Hide",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "h"
+                        },
+                        "to": [
+                            {
+                                "key_code": "h",
+                                "modifiers": [
+                                    "right_command"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: First Third",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "j"
+                        },
+                        "to": [
+                            {
+                                "key_code": "left_arrow",
+                                "modifiers": [
+                                    "right_option",
+                                    "control"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Last Third",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "k"
+                        },
+                        "to": [
+                            {
+                                "key_code": "right_arrow",
+                                "modifiers": [
+                                    "right_option",
+                                    "control"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Left Half",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "l"
+                        },
+                        "to": [
+                            {
+                                "key_code": "left_arrow",
+                                "modifiers": [
+                                    "right_option",
+                                    "right_command",
+                                    "right_shift"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Right Half",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "semicolon"
+                        },
+                        "to": [
+                            {
+                                "key_code": "right_arrow",
+                                "modifiers": [
+                                    "right_option",
+                                    "right_command",
+                                    "right_shift"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Full Screen",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "f"
+                        },
+                        "to": [
+                            {
+                                "key_code": "f",
+                                "modifiers": [
+                                    "right_option",
+                                    "right_command"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Move to next monitor",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "n"
+                        },
+                        "to": [
+                            {
+                                "key_code": "n",
+                                "modifiers": [
+                                    "right_option",
+                                    "right_command",
+                                    "right_shift"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Previous Tab",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "u"
+                        },
+                        "to": [
+                            {
+                                "key_code": "tab",
+                                "modifiers": [
+                                    "control",
+                                    "right_shift"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Window: Next Tab",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "i"
+                        },
+                        "to": [
+                            {
+                                "key_code": "tab",
+                                "modifiers": [
+                                    "control"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "next pane (iTerm)",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "comma"
+                        },
+                        "to": [
+                            {
+                                "key_code": "left_arrow",
+                                "modifiers": [
+                                    "right_command",
+                                    "right_option"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    {
+                        "description": "previous pane (iTerm)",
+                        "type": "basic",
+                        "from": {
+                            "key_code": "period"
+                        },
+                        "to": [
+                            {
+                                "key_code": "right_arrow",
+                                "modifiers": [
+                                    "right_command",
+                                    "right_option"
+                                ]
+                            }
+                        ],
+                        "conditions": [
+                            {
+                                "type": "variable_if",
+                                "name": "is_window_layer_on",
+                                "value": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
