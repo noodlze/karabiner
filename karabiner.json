@@ -894,7 +894,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
+                                        "key_code": "right_arrow",
                                         "modifiers": [
                                             "right_command",
                                             "left_option"
@@ -917,7 +917,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
+                                        "key_code": "left_arrow",
                                         "modifiers": [
                                             "right_command",
                                             "left_option"
