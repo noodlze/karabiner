@@ -68,265 +68,6 @@
                         ]
                     },
                     {
-                        "description": "Sublayer \"w\"(window)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Hide",
-                                "from": {
-                                    "key_code": "h"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": [
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: First Third",
-                                "from": {
-                                    "key_code": "j"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Last Third",
-                                "from": {
-                                    "key_code": "k"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Left Half",
-                                "from": {
-                                    "key_code": "l"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "right_command",
-                                            "right_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Right Half",
-                                "from": {
-                                    "key_code": "semicolon"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "right_command",
-                                            "right_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Full Screen",
-                                "from": {
-                                    "key_code": "f"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f",
-                                        "modifiers": [
-                                            "right_option",
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Move to next monitor",
-                                "from": {
-                                    "key_code": "n"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "n",
-                                        "modifiers": [
-                                            "right_option",
-                                            "right_command",
-                                            "right_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Previous Tab",
-                                "from": {
-                                    "key_code": "u"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "control",
-                                            "right_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "Window: Next Tab",
-                                "from": {
-                                    "key_code": "i"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": [
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "next pane (iTerm)",
-                                "from": {
-                                    "key_code": "comma"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "right_command",
-                                            "right_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "multitouch_extension_finger_count_total",
-                                        "type": "variable_if",
-                                        "value": 3
-                                    }
-                                ],
-                                "description": "previous pane (iTerm)",
-                                "from": {
-                                    "key_code": "period"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "right_command",
-                                            "right_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Sublayer \"n\" (navigation)",
                         "manipulators": [
                             {
@@ -1007,83 +748,15 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Window: Hide",
-                                "from": {
-                                    "key_code": "h"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": [
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_window_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Window: First Third",
-                                "from": {
-                                    "key_code": "j"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_window_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Window: Last Third",
-                                "from": {
-                                    "key_code": "k"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "right_option",
-                                            "control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_window_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
                                 "description": "Window: Left Half",
                                 "from": {
-                                    "key_code": "l"
+                                    "key_code": "a"
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
                                         "modifiers": [
-                                            "right_option",
+                                            "left_option",
                                             "right_command",
                                             "right_shift"
                                         ]
@@ -1101,13 +774,13 @@
                                 ],
                                 "description": "Window: Right Half",
                                 "from": {
-                                    "key_code": "semicolon"
+                                    "key_code": "s"
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
                                         "modifiers": [
-                                            "right_option",
+                                            "left_option",
                                             "right_command",
                                             "right_shift"
                                         ]
@@ -1131,7 +804,7 @@
                                     {
                                         "key_code": "f",
                                         "modifiers": [
-                                            "right_option",
+                                            "left_option",
                                             "right_command"
                                         ]
                                     }
@@ -1148,13 +821,13 @@
                                 ],
                                 "description": "Window: Move to next monitor",
                                 "from": {
-                                    "key_code": "n"
+                                    "key_code": "d"
                                 },
                                 "to": [
                                     {
                                         "key_code": "n",
                                         "modifiers": [
-                                            "right_option",
+                                            "left_option",
                                             "right_command",
                                             "right_shift"
                                         ]
@@ -1172,13 +845,13 @@
                                 ],
                                 "description": "Window: Previous Tab",
                                 "from": {
-                                    "key_code": "u"
+                                    "key_code": "z"
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                            "control",
+                                            "left_control",
                                             "right_shift"
                                         ]
                                     }
@@ -1195,13 +868,13 @@
                                 ],
                                 "description": "Window: Next Tab",
                                 "from": {
-                                    "key_code": "i"
+                                    "key_code": "x"
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                            "control"
+                                            "left_control"
                                         ]
                                     }
                                 ],
@@ -1217,14 +890,14 @@
                                 ],
                                 "description": "next pane (iTerm)",
                                 "from": {
-                                    "key_code": "comma"
+                                    "key_code": "c"
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
                                         "modifiers": [
                                             "right_command",
-                                            "right_option"
+                                            "left_option"
                                         ]
                                     }
                                 ],
@@ -1240,14 +913,58 @@
                                 ],
                                 "description": "previous pane (iTerm)",
                                 "from": {
-                                    "key_code": "period"
+                                    "key_code": "v"
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
                                         "modifiers": [
                                             "right_command",
-                                            "right_option"
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_window_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Window: Next Window",
+                                "from": {
+                                    "key_code": "r"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "right_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_window_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "next APP",
+                                "from": {
+                                    "key_code": "e"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "right_command"
                                         ]
                                     }
                                 ],
