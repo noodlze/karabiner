@@ -2,16 +2,21 @@
 My Karabiner config for HHKB Hybird-Type S 
 - Remap using [HHB Remapping Tool](https://happyhackingkb.com/download/) 
    - [Wide mod](https://colemakmods.github.io/ergonomic-mods/wide.html) 
-   - Move `backtick` next to `Esc` 
+   - Move `backtick` next to `Esc`
+
+![Hkkb top layer](/resources/img/Hkkb_top_layer.png "Hkkb Top layer") 
+![Hkkb Fn layer](/resources/img/Hkkb_Fn_layer.png "Hkkb Fn layer") 
 - Navigation layer (TODO)
 - Window layer 
+![window layer](/resources/img/window_layer.png "Window layer") 
 ## Setup
 ```bash
-ln -s ~/Documents/karabiner ~/.config
+ln -s ~/karabiner/karabiner ~/.config
 ```
 https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/#about-symbolic-link (allow full disk access for Karabiner)
 
 ## Custom shortcuts
+### iTerm (TODO)
 ### Better Snap Tool
 - Under Shortcuts panel
   - For `maximise`: add shortcut `Option + Command + f`
