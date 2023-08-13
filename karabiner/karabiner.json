@@ -69,436 +69,6 @@
                         ]
                     },
                     {
-                        "description": "Sublayer \"n\" (navigation)",
-                        "manipulators": [
-                            {
-                                "description": "Toggle on/off navigation layer on home row",
-                                "from": {
-                                    "key_code": "left_control"
-                                },
-                                "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 300
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "is_navigation_layer_on",
-                                            "value": 0
-                                        }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "navigation_layer_on",
-                                            "text": ""
-                                        }
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "set_variable": {
-                                            "name": "is_navigation_layer_on",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "navigation_layer_on",
-                                            "text": "NAVIGATION LAYER enabled"
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "h -> left_arrow",
-                                "from": {
-                                    "key_code": "h"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "j -> down_arrow",
-                                "from": {
-                                    "key_code": "j"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "k -> up_arrow",
-                                "from": {
-                                    "key_code": "k"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "l -> right_arrow",
-                                "from": {
-                                    "key_code": "l"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "a -> move cursor left one word",
-                                "from": {
-                                    "key_code": "a"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "s -> move cursor right one word",
-                                "from": {
-                                    "key_code": "s"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "w -> Delete the word to the left of the insertion point",
-                                "from": {
-                                    "key_code": "w"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "q -> home",
-                                "from": {
-                                    "key_code": "q"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "home"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "e -> end",
-                                "from": {
-                                    "key_code": "e"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "end"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "u -> Option–Shift–Left Arrow: Extend text selection to the beginning of the current word",
-                                "from": {
-                                    "key_code": "u"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "i -> Shift–Command–Left Arrow: Select the text between the insertion point and the beginning of the current line",
-                                "from": {
-                                    "key_code": "i"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "o -> Shift–Command–Right Arrow: Select the text between the insertion point and the end of the current line",
-                                "from": {
-                                    "key_code": "o"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "p -> Option–Shift–Right Arrow: Extend text selection to the end of the current word",
-                                "from": {
-                                    "key_code": "p"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "n -> Shift–Left Arrow: Extend text selection one character to the left",
-                                "from": {
-                                    "key_code": "n"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "m -> Shift–Down Arrow: Extend text selection to the nearest character at the same horizontal location on the line below",
-                                "from": {
-                                    "key_code": "m"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "down_arrow",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": ", -> Shift–Up Arrow: Extend text selection to the nearest character at the same horizontal location on the line above",
-                                "from": {
-                                    "key_code": "comma"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "up_arrow",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": ". -> Shift–Right Arrow: Extend text selection one character to the right",
-                                "from": {
-                                    "key_code": "period"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "f -> Control-K: Delete the text between the insertion point and the end of the line or paragraph",
-                                "from": {
-                                    "key_code": "f"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Sublayer \"w\"-activate using right shift",
                         "manipulators": [
                             {
@@ -1338,6 +908,521 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'iTerm.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Sublayer \"n\" (navigation)",
+                        "manipulators": [
+                            {
+                                "description": "Toggle on/off navigation layer on home row",
+                                "from": {
+                                    "key_code": "left_control"
+                                },
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 300
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "is_navigation_layer_on",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "navigation_layer_on",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "set_variable": {
+                                            "name": "is_navigation_layer_on",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "navigation_layer_on",
+                                            "text": "NAVIGATION LAYER enabled"
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "h -> left_arrow",
+                                "from": {
+                                    "key_code": "h"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "j -> down_arrow",
+                                "from": {
+                                    "key_code": "j"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "k -> up_arrow",
+                                "from": {
+                                    "key_code": "k"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "l -> right_arrow",
+                                "from": {
+                                    "key_code": "l"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.VSCode$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "semicolon -> toggle fold (vscode)",
+                                "from": {
+                                    "key_code": "semicolon"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "right_command"
+                                        ]
+                                    },
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "right_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.jetbrains\\.intellij$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "semicolon -> toggle fold (intellij)",
+                                "from": {
+                                    "key_code": "semicolon"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": [
+                                            "right_option",
+                                            "right_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "a -> move cursor left one word",
+                                "from": {
+                                    "key_code": "a"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "s -> move cursor right one word",
+                                "from": {
+                                    "key_code": "s"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "w -> Delete the word to the left of the insertion point",
+                                "from": {
+                                    "key_code": "w"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "q -> home",
+                                "from": {
+                                    "key_code": "q"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "home"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "e -> end",
+                                "from": {
+                                    "key_code": "e"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "end"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "u -> Option–Shift–Left Arrow: Extend text selection to the beginning of the current word",
+                                "from": {
+                                    "key_code": "u"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "i -> Shift–Command–Left Arrow: Select the text between the insertion point and the beginning of the current line",
+                                "from": {
+                                    "key_code": "i"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "o -> Shift–Command–Right Arrow: Select the text between the insertion point and the end of the current line",
+                                "from": {
+                                    "key_code": "o"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "p -> Option–Shift–Right Arrow: Extend text selection to the end of the current word",
+                                "from": {
+                                    "key_code": "p"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "n -> Shift–Left Arrow: Extend text selection one character to the left",
+                                "from": {
+                                    "key_code": "n"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "m -> Shift–Down Arrow: Extend text selection to the nearest character at the same horizontal location on the line below",
+                                "from": {
+                                    "key_code": "m"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": ", -> Shift–Up Arrow: Extend text selection to the nearest character at the same horizontal location on the line above",
+                                "from": {
+                                    "key_code": "comma"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": ". -> Shift–Right Arrow: Extend text selection one character to the right",
+                                "from": {
+                                    "key_code": "period"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "f -> Control-K: Delete the text between the insertion point and the end of the line or paragraph",
+                                "from": {
+                                    "key_code": "f"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_navigation_layer_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "y -> Control-O: Insert a new line after the insertion point",
+                                "from": {
+                                    "key_code": "y"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"

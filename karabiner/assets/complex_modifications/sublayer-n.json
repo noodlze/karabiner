@@ -124,6 +124,58 @@
           ]
         },
         {
+          "description": "semicolon -> toggle fold (vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": ["right_command"]
+            },
+            {
+              "key_code": "l",
+              "modifiers": ["right_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "semicolon -> toggle fold (intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "h",
+              "modifiers": ["right_option", "right_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
           "description": "a -> move cursor left one word",
           "type": "basic",
           "from": {
@@ -132,9 +184,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_option"
-              ]
+              "modifiers": ["left_option"]
             }
           ],
           "conditions": [
@@ -154,9 +204,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_option"
-              ]
+              "modifiers": ["left_option"]
             }
           ],
           "conditions": [
@@ -176,9 +224,7 @@
           "to": [
             {
               "key_code": "delete_or_backspace",
-              "modifiers": [
-                "left_option"
-              ]
+              "modifiers": ["left_option"]
             }
           ],
           "conditions": [
@@ -236,10 +282,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
+              "modifiers": ["left_option", "left_shift"]
             }
           ],
           "conditions": [
@@ -259,10 +302,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
+              "modifiers": ["left_command", "left_shift"]
             }
           ],
           "conditions": [
@@ -282,10 +322,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_command",
-                "left_shift"
-              ]
+              "modifiers": ["left_command", "left_shift"]
             }
           ],
           "conditions": [
@@ -305,10 +342,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
+              "modifiers": ["left_option", "left_shift"]
             }
           ],
           "conditions": [
@@ -328,9 +362,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -350,9 +382,7 @@
           "to": [
             {
               "key_code": "down_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -372,9 +402,7 @@
           "to": [
             {
               "key_code": "up_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -394,9 +422,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -416,9 +442,7 @@
           "to": [
             {
               "key_code": "k",
-              "modifiers": [
-                "left_control"
-              ]
+              "modifiers": ["left_control"]
             }
           ],
           "conditions": [
@@ -438,9 +462,7 @@
           "to": [
             {
               "key_code": "o",
-              "modifiers": [
-                "left_control"
-              ]
+              "modifiers": ["left_control"]
             }
           ],
           "conditions": [
