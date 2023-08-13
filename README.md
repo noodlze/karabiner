@@ -6,9 +6,10 @@ My Karabiner config for HHKB Hybird-Type S
 
 ![Hkkb top layer](/resources/img/Hkkb_top_layer.png "Hkkb Top layer") 
 ![Hkkb Fn layer](/resources/img/Hkkb_Fn_layer.png "Hkkb Fn layer") 
-- Navigation layer (TODO)
+- Navigation layer 
+![Navigation layer](/resources/img/navigation_layer.png "Navigation layer")                         
 - Window layer 
-![window layer](/resources/img/window_layer.png "Window layer") 
+![window layer](/resources/img/window_layer.png "Window layer")                         
 ## Setup
 ```bash
 ln -s ~/karabiner/karabiner ~/.config

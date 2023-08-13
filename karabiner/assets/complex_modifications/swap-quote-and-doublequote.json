@@ -1,56 +1,74 @@
 {
-    "title": "Exchange quote with doublequote",
-    "rules": [
-      {
-        "description": "to: doublequote on first layer and shift + doublequote -> quote on 2nd layer",
-        "manipulators": [
-          {
-            "type": "basic",
-            "from": {
-              "key_code": "quote",
-              "modifiers": {
-                "mandatory": [
-                  "right_shift"
-                ]
-              }
-            },
-            "to": [
-              {
-                "key_code": "quote"
-              }
-            ]
+  "title": "Exchange quote with doublequote",
+  "rules": [
+    {
+      "description": "to: doublequote on first layer and shift + doublequote -> quote on 2nd layer",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["right_shift"]
+            }
           },
-          {
-            "type": "basic",
-            "from": {
-              "key_code": "quote",
-              "modifiers": {
-                "mandatory": [
-                  "left_shift"
-                ]
-              }
-            },
-            "to": [
-              {
-                "key_code": "quote"
-              }
-            ]
-          },
-          {
-            "type": "basic",
-            "from": {
+          "to": [
+            {
               "key_code": "quote"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 0
             },
-            "to": [
-              {
-                "key_code": "quote",
-                "modifiers": [
-                  "left_shift"
-                ]
-              }
-            ]
-          } 
-        ]
-      }
-    ]
-  }
+            {
+              "name": "is_window_layer_on",
+              "type": "variable_if",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "mandatory": ["left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "quote"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "quote",
+              "modifiers": ["left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 0
+            },
+            {
+              "name": "is_window_layer_on",
+              "type": "variable_if",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

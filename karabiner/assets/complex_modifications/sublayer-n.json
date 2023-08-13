@@ -236,7 +236,7 @@
           ]
         },
         {
-          "description": "q -> home",
+          "description": "q -> go to beginning of line",
           "type": "basic",
           "from": {
             "key_code": "q"
@@ -255,7 +255,7 @@
           ]
         },
         {
-          "description": "e -> end",
+          "description": "e -> go to end of line",
           "type": "basic",
           "from": {
             "key_code": "e"
@@ -263,6 +263,122 @@
           "to": [
             {
               "key_code": "end"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "r -> go to beginning of file(vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "home",
+              "modifiers": ["left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "r -> go to beginning of file(intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "home",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "t -> go to end of file(vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "key_code": "end",
+              "modifiers": ["left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "t -> go to end of file(intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "key_code": "end",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "y -> Shift–Command–Left Arrow: Select the text between the insertion point and the beginning of the current line",
+          "type": "basic",
+          "from": {
+            "key_code": "y"
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": ["left_command", "left_shift"]
             }
           ],
           "conditions": [
@@ -294,7 +410,7 @@
           ]
         },
         {
-          "description": "i -> Shift–Command–Left Arrow: Select the text between the insertion point and the beginning of the current line",
+          "description": "i -> Shift–Left Arrow: Extend text selection one character to the left",
           "type": "basic",
           "from": {
             "key_code": "i"
@@ -302,7 +418,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": ["left_command", "left_shift"]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -314,7 +430,7 @@
           ]
         },
         {
-          "description": "o -> Shift–Command–Right Arrow: Select the text between the insertion point and the end of the current line",
+          "description": "o -> Shift–Right Arrow: Extend text selection one character to the right",
           "type": "basic",
           "from": {
             "key_code": "o"
@@ -322,7 +438,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": ["left_command", "left_shift"]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
@@ -354,15 +470,15 @@
           ]
         },
         {
-          "description": "n -> Shift–Left Arrow: Extend text selection one character to the left",
+          "description": "quote -> Shift–Command–Right Arrow: Select the text between the insertion point and the end of the current line",
           "type": "basic",
           "from": {
-            "key_code": "n"
+            "key_code": "quote"
           },
           "to": [
             {
-              "key_code": "left_arrow",
-              "modifiers": ["left_shift"]
+              "key_code": "right_arrow",
+              "modifiers": ["left_command", "left_shift"]
             }
           ],
           "conditions": [
@@ -374,7 +490,55 @@
           ]
         },
         {
-          "description": "m -> Shift–Down Arrow: Extend text selection to the nearest character at the same horizontal location on the line below",
+          "description": "n -> (cursorTopSelect) Select from cursor to beginning of the file (Vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": ["left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "n -> Select from cursor to beginning of the file (intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "home",
+              "modifiers": ["left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "n -> (cursorTopSelect) Select from cursor to end of the file (Vscode)",
           "type": "basic",
           "from": {
             "key_code": "m"
@@ -382,7 +546,7 @@
           "to": [
             {
               "key_code": "down_arrow",
-              "modifiers": ["left_shift"]
+              "modifiers": ["left_shift", "left_command"]
             }
           ],
           "conditions": [
@@ -390,11 +554,63 @@
               "type": "variable_if",
               "name": "is_navigation_layer_on",
               "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
             }
           ]
         },
         {
-          "description": ", -> Shift–Up Arrow: Extend text selection to the nearest character at the same horizontal location on the line above",
+          "description": "n -> Select from cursor to end of the file (intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "key_code": "end",
+              "modifiers": ["left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": ", -> expand selection(vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": ["left_control", "left_shift", "left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": ", -> expand selection (intellij)",
           "type": "basic",
           "from": {
             "key_code": "comma"
@@ -402,7 +618,7 @@
           "to": [
             {
               "key_code": "up_arrow",
-              "modifiers": ["left_shift"]
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
@@ -410,19 +626,23 @@
               "type": "variable_if",
               "name": "is_navigation_layer_on",
               "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
             }
           ]
         },
         {
-          "description": ". -> Shift–Right Arrow: Extend text selection one character to the right",
+          "description": ", -> shrink selection(vscode)",
           "type": "basic",
           "from": {
             "key_code": "period"
           },
           "to": [
             {
-              "key_code": "right_arrow",
-              "modifiers": ["left_shift"]
+              "key_code": "left_arrow",
+              "modifiers": ["left_control", "left_shift", "left_command"]
             }
           ],
           "conditions": [
@@ -430,19 +650,47 @@
               "type": "variable_if",
               "name": "is_navigation_layer_on",
               "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
             }
           ]
         },
         {
-          "description": "f -> Control-K: Delete the text between the insertion point and the end of the line or paragraph",
+          "description": ", -> shrink selection (intellij)",
+          "type": "basic",
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "f -> copy",
           "type": "basic",
           "from": {
             "key_code": "f"
           },
           "to": [
             {
-              "key_code": "k",
-              "modifiers": ["left_control"]
+              "key_code": "c",
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
@@ -454,15 +702,143 @@
           ]
         },
         {
-          "description": "y -> Control-O: Insert a new line after the insertion point",
+          "description": "g -> paste",
           "type": "basic",
           "from": {
-            "key_code": "y"
+            "key_code": "g"
           },
           "to": [
             {
-              "key_code": "o",
-              "modifiers": ["left_control"]
+              "key_code": "v",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "[ -> close tab",
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket"
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "] -> new file (vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "key_code": "n",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_if"
+            }
+          ]
+        },
+        {
+          "description": "] -> new tab (not vscode)",
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            },
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_unless"
+            }
+          ]
+        },
+        {
+          "description": "slash -> quit",
+          "type": "basic",
+          "from": {
+            "key_code": "slash"
+          },
+          "to": [
+            {
+              "key_code": "q",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "z -> undo",
+          "type": "basic",
+          "from": {
+            "key_code": "z"
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "x -> select all",
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
