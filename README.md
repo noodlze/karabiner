@@ -26,6 +26,8 @@ https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/#ab
   - For `right half`: add `Shift + Option + Command + ->`
 ### Vscode
 - For `View: Two Columns Editor Layout` : add shortcut `Option + Command + u`
+- For `cursorTop`: change to `Shift + Command + Home`
+- For `cursorBottom`: chane to `Shift + Command + End`
 ### Intellij IDEA
 - Override `Search everywhere` shortcut
   - Disable default `Double-Shift` 
