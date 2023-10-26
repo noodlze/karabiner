@@ -176,10 +176,10 @@
           ]
         },
         {
-          "description": "a -> move cursor left one word",
+          "description": "] -> move cursor left one word",
           "type": "basic",
           "from": {
-            "key_code": "a"
+            "key_code": "close_bracket"
           },
           "to": [
             {
@@ -196,10 +196,10 @@
           ]
         },
         {
-          "description": "s -> move cursor right one word",
+          "description": "; -> move cursor right one word",
           "type": "basic",
           "from": {
-            "key_code": "s"
+            "key_code": "semicolon"
           },
           "to": [
             {
@@ -722,6 +722,30 @@
           ]
         },
         {
+          "description": "b -> paste Flycut",
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": ["left_command", "left_shift"]
+            },
+            {
+              "key_code": "v",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
           "description": "[ -> close tab",
           "type": "basic",
           "from": {
@@ -742,78 +766,10 @@
           ]
         },
         {
-          "description": "] -> new file (vscode)",
-          "type": "basic",
-          "from": {
-            "key_code": "close_bracket"
-          },
-          "to": [
-            {
-              "key_code": "n",
-              "modifiers": ["left_command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_navigation_layer_on",
-              "value": 1
-            },
-            {
-              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
-              "type": "frontmost_application_if"
-            }
-          ]
-        },
-        {
-          "description": "] -> new tab (not vscode)",
-          "type": "basic",
-          "from": {
-            "key_code": "close_bracket"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": ["left_command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_navigation_layer_on",
-              "value": 1
-            },
-            {
-              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
-              "type": "frontmost_application_unless"
-            }
-          ]
-        },
-        {
-          "description": "slash -> quit",
+          "description": "slash -> undo",
           "type": "basic",
           "from": {
             "key_code": "slash"
-          },
-          "to": [
-            {
-              "key_code": "q",
-              "modifiers": ["left_command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_navigation_layer_on",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "description": "z -> undo",
-          "type": "basic",
-          "from": {
-            "key_code": "z"
           },
           "to": [
             {
@@ -830,10 +786,10 @@
           ]
         },
         {
-          "description": "x -> select all",
+          "description": "s -> select all",
           "type": "basic",
           "from": {
-            "key_code": "x"
+            "key_code": "s"
           },
           "to": [
             {
