@@ -1085,69 +1085,6 @@
                                         "name": "is_navigation_layer_on",
                                         "type": "variable_if",
                                         "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "semicolon -> toggle fold (vscode)",
-                                "from": {
-                                    "key_code": "semicolon"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": [
-                                            "right_command"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": [
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.jetbrains\\.intellij$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "semicolon -> toggle fold (intellij)",
-                                "from": {
-                                    "key_code": "semicolon"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "h",
-                                        "modifiers": [
-                                            "right_option",
-                                            "right_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "is_navigation_layer_on",
-                                        "type": "variable_if",
-                                        "value": 1
                                     }
                                 ],
                                 "description": "] -> move cursor left one word",

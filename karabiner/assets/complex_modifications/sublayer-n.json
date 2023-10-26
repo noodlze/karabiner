@@ -124,58 +124,6 @@
           ]
         },
         {
-          "description": "semicolon -> toggle fold (vscode)",
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon"
-          },
-          "to": [
-            {
-              "key_code": "k",
-              "modifiers": ["right_command"]
-            },
-            {
-              "key_code": "l",
-              "modifiers": ["right_command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_navigation_layer_on",
-              "value": 1
-            },
-            {
-              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
-              "type": "frontmost_application_if"
-            }
-          ]
-        },
-        {
-          "description": "semicolon -> toggle fold (intellij)",
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon"
-          },
-          "to": [
-            {
-              "key_code": "h",
-              "modifiers": ["right_option", "right_command"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_navigation_layer_on",
-              "value": 1
-            },
-            {
-              "bundle_identifiers": ["^com\\.jetbrains\\.intellij$"],
-              "type": "frontmost_application_if"
-            }
-          ]
-        },
-        {
           "description": "] -> move cursor left one word",
           "type": "basic",
           "from": {
