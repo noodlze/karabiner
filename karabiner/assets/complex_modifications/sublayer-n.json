@@ -670,7 +670,7 @@
           ]
         },
         {
-          "description": "b -> paste Flycut",
+          "description": "v -> paste Flycut",
           "type": "basic",
           "from": {
             "key_code": "v"
@@ -679,9 +679,25 @@
             {
               "key_code": "v",
               "modifiers": ["left_command", "left_shift"]
-            },
+            }
+          ],
+          "conditions": [
             {
-              "key_code": "v",
+              "type": "variable_if",
+              "name": "is_navigation_layer_on",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "b -> cut",
+          "type": "basic",
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "x",
               "modifiers": ["left_command"]
             }
           ],

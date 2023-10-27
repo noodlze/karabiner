@@ -760,6 +760,26 @@
             }
           ],
           "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "name": "is_window_layer_on",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "description": "Screenshot",
+          "from": {
+            "key_code": "open_bracket"
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": ["left_command", "left_shift"]
+            }
+          ],
+          "type": "basic"
         }
       ]
     }
