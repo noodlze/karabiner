@@ -1,0 +1,68 @@
+{
+  "title": "Sublayer level 2",
+  "rules": [
+    {
+      "description": "Sublayer 2",
+      "manipulators": [
+        {
+          "description": "Toggle on/off sublayer 2",
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": ["left_option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 300
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "is_layer_2_on",
+                "value": 1
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_2_on",
+                "text": "LAYER 2 enabled"
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "is_layer_2_on",
+                "value": 0
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_2_on",
+                "text": ""
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_level_4_layer_on",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "is_level_3_layer_on",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

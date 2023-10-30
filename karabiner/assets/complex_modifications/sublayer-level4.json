@@ -1,0 +1,65 @@
+{
+  "title": "Sublayer level 4",
+  "rules": [
+    {
+      "description": "Sublayer 4",
+      "manipulators": [
+        {
+          "description": "Toggle on/off sublayer 4",
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "a"
+              },
+              {
+                "key_code": "s"
+              },
+              {
+                "key_code": "d"
+              }
+            ],
+            "modifiers": {
+              "mandatory": ["left_option"]
+            },
+            "simultaneous_options": {
+              "key_down_order": "strict"
+            }
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "is_layer_4_on",
+                "value": 1
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_4_on",
+                "text": "LAYER 4 enabled"
+              }
+            }
+          ],
+          "parameters": {
+            "basic.simultaneous_threshold_milliseconds": 50,
+            "basic.to_if_held_down_threshold_milliseconds": 300
+          },
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "is_layer_4_on",
+                "value": 0
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_4_on",
+                "text": ""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

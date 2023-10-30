@@ -1,0 +1,56 @@
+{
+  "title": "Sublayer 1",
+  "rules": [
+    {
+      "description": "Sublayer 1",
+      "manipulators": [
+        {
+          "description": "Toggle on/off Layer 1",
+          "type": "basic",
+          "from": {
+            "key_code": "left_option"
+          },
+          "to": [
+            {
+              "key_code": "left_option"
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 300
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "left_option"
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_1_on",
+                "text": "LAYER 1 enabled"
+              }
+            },
+            {
+              "set_variable": {
+                "name": "is_layer_1_on",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "is_layer_1_on",
+                "value": 0
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_1_on",
+                "text": ""
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

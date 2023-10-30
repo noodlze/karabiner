@@ -1,0 +1,69 @@
+{
+  "title": "Sublayer level 3",
+  "rules": [
+    {
+      "description": "Sublayer 3",
+      "manipulators": [
+        {
+          "description": "Toggle on/off sublayer 3",
+          "type": "basic",
+          "from": {
+            "simultaneous": [
+              {
+                "key_code": "a"
+              },
+              {
+                "key_code": "s"
+              }
+            ],
+            "modifiers": {
+              "mandatory": ["left_option"]
+            },
+            "simultaneous_options": {
+              "key_down_order": "strict"
+            }
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "is_layer_3_on",
+                "value": 1
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_3_on",
+                "text": "LAYER 3 enabled"
+              }
+            }
+          ],
+          "parameters": {
+            "basic.simultaneous_threshold_milliseconds": 50,
+            "basic.to_if_held_down_threshold_milliseconds": 300
+          },
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "is_layer_3_on",
+                "value": 0
+              }
+            },
+            {
+              "set_notification_message": {
+                "id": "layer_3_on",
+                "text": ""
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_level_4_layer_on",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
