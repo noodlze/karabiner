@@ -5,26 +5,10 @@
       "description": "Sublayer 4",
       "manipulators": [
         {
-          "description": "Toggle on/off sublayer 4",
+          "description": "Toggle on/off sublayer 4 variable",
           "type": "basic",
           "from": {
-            "simultaneous": [
-              {
-                "key_code": "a"
-              },
-              {
-                "key_code": "s"
-              },
-              {
-                "key_code": "d"
-              }
-            ],
-            "modifiers": {
-              "mandatory": ["left_option"]
-            },
-            "simultaneous_options": {
-              "key_down_order": "strict"
-            }
+            "key_code": "d"
           },
           "to_if_held_down": [
             {
@@ -41,8 +25,7 @@
             }
           ],
           "parameters": {
-            "basic.simultaneous_threshold_milliseconds": 50,
-            "basic.to_if_held_down_threshold_milliseconds": 300
+            "basic.to_if_held_down_threshold_milliseconds": 3
           },
           "to_after_key_up": [
             {
@@ -56,6 +39,13 @@
                 "id": "layer_4_on",
                 "text": ""
               }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
             }
           ]
         }

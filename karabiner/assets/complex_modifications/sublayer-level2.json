@@ -5,21 +5,13 @@
       "description": "Sublayer 2",
       "manipulators": [
         {
-          "description": "Toggle on/off sublayer 2",
+          "description": "Toggle on/off sublayer 2 variable",
           "type": "basic",
           "from": {
-            "key_code": "a",
-            "modifiers": {
-              "mandatory": ["left_option"]
-            }
+            "key_code": "a"
           },
-          "to": [
-            {
-              "key_code": "left_control"
-            }
-          ],
           "parameters": {
-            "basic.to_if_held_down_threshold_milliseconds": 300
+            "basic.to_if_held_down_threshold_milliseconds": 3
           },
           "to_if_held_down": [
             {
@@ -52,13 +44,8 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "is_level_4_layer_on",
-              "value": 0
-            },
-            {
-              "type": "variable_if",
-              "name": "is_level_3_layer_on",
-              "value": 0
+              "name": "is_layer_1_on",
+              "value": 1
             }
           ]
         }

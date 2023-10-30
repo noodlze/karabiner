@@ -1846,45 +1846,76 @@
                         ]
                     },
                     {
-                        "description": "Sublayer 4",
+                        "description": "Sublayer 1",
                         "manipulators": [
                             {
-                                "description": "Toggle on/off sublayer 4",
+                                "description": "Toggle on/off Layer 1 variable",
                                 "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "a"
-                                        },
-                                        {
-                                            "key_code": "s"
-                                        },
-                                        {
-                                            "key_code": "d"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict"
-                                    }
+                                    "key_code": "left_option"
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 50,
                                     "basic.to_if_held_down_threshold_milliseconds": 300
                                 },
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "is_layer_4_on",
+                                            "name": "is_layer_1_on",
                                             "value": 0
                                         }
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "layer_4_on",
+                                            "id": "layer_1_on",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer_1_on",
+                                            "text": "LAYER 1 enabled"
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "is_layer_1_on",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Sublayer 2",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "is_layer_1_on",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Toggle on/off sublayer 2 variable",
+                                "from": {
+                                    "key_code": "a"
+                                },
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 3
+                                },
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "is_layer_2_on",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer_2_on",
                                             "text": ""
                                         }
                                     }
@@ -1892,14 +1923,14 @@
                                 "to_if_held_down": [
                                     {
                                         "set_variable": {
-                                            "name": "is_layer_4_on",
+                                            "name": "is_layer_2_on",
                                             "value": 1
                                         }
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "layer_4_on",
-                                            "text": "LAYER 4 enabled"
+                                            "id": "layer_2_on",
+                                            "text": "LAYER 2 enabled"
                                         }
                                     }
                                 ],
@@ -1913,33 +1944,17 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_level_4_layer_on",
+                                        "name": "is_layer_2_on",
                                         "type": "variable_if",
-                                        "value": 0
+                                        "value": 1
                                     }
                                 ],
-                                "description": "Toggle on/off sublayer 3",
+                                "description": "Toggle on/off sublayer 3 variable",
                                 "from": {
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "a"
-                                        },
-                                        {
-                                            "key_code": "s"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict"
-                                    }
+                                    "key_code": "s"
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 50,
-                                    "basic.to_if_held_down_threshold_milliseconds": 300
+                                    "basic.to_if_held_down_threshold_milliseconds": 3
                                 },
                                 "to_after_key_up": [
                                     {
@@ -1974,48 +1989,33 @@
                         ]
                     },
                     {
-                        "description": "Sublayer 2",
+                        "description": "Sublayer 4",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_level_4_layer_on",
+                                        "name": "is_layer_3_on",
                                         "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "is_level_3_layer_on",
-                                        "type": "variable_if",
-                                        "value": 0
+                                        "value": 1
                                     }
                                 ],
-                                "description": "Toggle on/off sublayer 2",
+                                "description": "Toggle on/off sublayer 4 variable",
                                 "from": {
-                                    "key_code": "a",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_option"
-                                        ]
-                                    }
+                                    "key_code": "d"
                                 },
                                 "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 300
+                                    "basic.to_if_held_down_threshold_milliseconds": 3
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "is_layer_2_on",
+                                            "name": "is_layer_4_on",
                                             "value": 0
                                         }
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "layer_2_on",
+                                            "id": "layer_4_on",
                                             "text": ""
                                         }
                                     }
@@ -2023,65 +2023,14 @@
                                 "to_if_held_down": [
                                     {
                                         "set_variable": {
-                                            "name": "is_layer_2_on",
+                                            "name": "is_layer_4_on",
                                             "value": 1
                                         }
                                     },
                                     {
                                         "set_notification_message": {
-                                            "id": "layer_2_on",
-                                            "text": "LAYER 2 enabled"
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Sublayer 1",
-                        "manipulators": [
-                            {
-                                "description": "Toggle on/off Layer 1",
-                                "from": {
-                                    "key_code": "left_option"
-                                },
-                                "parameters": {
-                                    "basic.to_if_held_down_threshold_milliseconds": 300
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_option"
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "is_layer_1_on",
-                                            "value": 0
-                                        }
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "layer_1_on",
-                                            "text": ""
-                                        }
-                                    }
-                                ],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_option"
-                                    },
-                                    {
-                                        "set_notification_message": {
-                                            "id": "layer_1_on",
-                                            "text": "LAYER 1 enabled"
-                                        }
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "is_layer_1_on",
-                                            "value": 1
+                                            "id": "layer_4_on",
+                                            "text": "LAYER 4 enabled"
                                         }
                                     }
                                 ],
