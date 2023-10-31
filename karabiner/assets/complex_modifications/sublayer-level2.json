@@ -996,31 +996,6 @@
               "type": "frontmost_application_if"
             }
           ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "is_layer_1_on",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "is_layer_2_on",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "is_layer_3_on",
-              "value": 0
-            },
-            {
-              "type": "variable_if",
-              "name": "is_layer_4_on",
-              "value": 0
-            }
-          ]
         }
       ]
     }
