@@ -1396,7 +1396,7 @@
           "description": "[ -> close tab",
           "type": "basic",
           "from": {
-            "key_code": "space"
+            "key_code": "spacebar"
           },
           "to": [
             {
