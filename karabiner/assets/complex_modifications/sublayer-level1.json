@@ -8,7 +8,10 @@
           "description": "Toggle on/off Layer 1 variable",
           "type": "basic",
           "from": {
-            "key_code": "left_option"
+            "key_code": "left_control"
+          },
+          "to": {
+            "key_code": "left_control"
           },
           "parameters": {
             "basic.to_if_held_down_threshold_milliseconds": 300
