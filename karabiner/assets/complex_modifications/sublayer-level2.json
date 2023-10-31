@@ -52,7 +52,7 @@
         {
           "description": "Find",
           "from": {
-            "key_code": "r"
+            "key_code": "g"
           },
           "to": [
             {
@@ -87,7 +87,7 @@
         {
           "description": "Select all",
           "from": {
-            "key_code": "t"
+            "key_code": "open_bracket"
           },
           "to": [
             {
@@ -123,7 +123,7 @@
           "description": "toggle fold (vscode)",
           "type": "basic",
           "from": {
-            "key_code": "g"
+            "key_code": "t"
           },
           "to": [
             {
@@ -166,7 +166,7 @@
           "description": "toggle fold (intellij)",
           "type": "basic",
           "from": {
-            "key_code": "g"
+            "key_code": "t"
           },
           "to": [
             {

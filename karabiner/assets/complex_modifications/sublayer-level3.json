@@ -48,6 +48,286 @@
               "value": 1
             }
           ]
+        },
+        {
+          "description": "h -> Delete the word to the left of the insertion point",
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": ["left_option"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "j -> undo",
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "k -> copy",
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "l -> paste",
+          "type": "basic",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "semicolon -> save",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "i -> cut",
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "o -> paste Flycut",
+          "type": "basic",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": ["left_command", "left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "Screenshot",
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": ["left_command", "left_shift"]
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
         }
       ]
     }

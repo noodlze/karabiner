@@ -1356,6 +1356,76 @@
               "type": "frontmost_application_if"
             }
           ]
+        },
+        {
+          "description": "[ -> close tab",
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket"
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "[ -> close tab",
+          "type": "basic",
+          "from": {
+            "key_code": "space"
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": ["left_command"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "is_layer_1_on",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_2_on",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_3_on",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "is_layer_4_on",
+              "value": 0
+            }
+          ]
         }
       ]
     }
