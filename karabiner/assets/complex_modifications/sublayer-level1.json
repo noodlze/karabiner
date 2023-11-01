@@ -118,7 +118,7 @@
         {
           "description": "Window: Move to next monitor",
           "from": {
-            "key_code": "d"
+            "key_code": "f"
           },
           "to": [
             {
@@ -153,7 +153,7 @@
         {
           "description": "Window: Full Screen",
           "from": {
-            "key_code": "f"
+            "key_code": "g"
           },
           "to": [
             {
