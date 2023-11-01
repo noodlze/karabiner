@@ -23,7 +23,7 @@
             {
               "set_notification_message": {
                 "id": "layer_2_on",
-                "text": "LAYER 2 enabled"
+                "text": "LAYER 2 enabled (TRAVERSAL)"
               }
             }
           ],

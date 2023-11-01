@@ -49,7 +49,7 @@
                                     {
                                         "set_notification_message": {
                                             "id": "layer_1_on",
-                                            "text": "LAYER 1 enabled"
+                                            "text": "LAYER 1 enabled (NAVIGATION)"
                                         }
                                     },
                                     {
@@ -1611,7 +1611,7 @@
                                     {
                                         "set_notification_message": {
                                             "id": "layer_2_on",
-                                            "text": "LAYER 2 enabled"
+                                            "text": "LAYER 2 enabled (TRAVERSAL)"
                                         }
                                     }
                                 ],
@@ -2682,7 +2682,7 @@
                                     {
                                         "set_notification_message": {
                                             "id": "layer_3_on",
-                                            "text": "LAYER 3 enabled"
+                                            "text": "LAYER 3 enabled (EDITING)"
                                         }
                                     }
                                 ],
