@@ -21,9 +21,74 @@
                         "description": "Sublayer 1",
                         "manipulators": [
                             {
-                                "description": "Toggle on/off Layer 1 variable",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "description": "HHKB-Hybrid_1",
+                                                "product_id": 33,
+                                                "vendor_id": 1278
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "Toggle on/off Layer 1 variable (HHKB)",
                                 "from": {
                                     "key_code": "left_control"
+                                },
+                                "parameters": {
+                                    "basic.to_if_held_down_threshold_milliseconds": 300
+                                },
+                                "to": {
+                                    "key_code": "left_control"
+                                },
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "is_layer_1_on",
+                                            "value": 0
+                                        }
+                                    },
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer_1_on",
+                                            "text": ""
+                                        }
+                                    }
+                                ],
+                                "to_if_held_down": [
+                                    {
+                                        "set_notification_message": {
+                                            "id": "layer_1_on",
+                                            "text": "LAYER 1 enabled (NAVIGATION)"
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "is_layer_1_on",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "description": "Apple Internal Keyboard",
+                                                "product_id": 832,
+                                                "vendor_id": 1452
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "description": "Toggle on/off Layer 1 variable (In-built Apple keyboard)",
+                                "from": {
+                                    "key_code": "caps_lock"
                                 },
                                 "parameters": {
                                     "basic.to_if_held_down_threshold_milliseconds": 300
@@ -3208,18 +3273,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control"
-                                }
-                            ]
-                        }
-                    ],
+                    "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
